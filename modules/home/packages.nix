@@ -7,4 +7,5 @@
   chezmoi
   htop
   rustup
+  zellij
 ]
