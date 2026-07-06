@@ -17,7 +17,6 @@
       "cmux"
       "discord"
       "orbstack"
-      "tailscale"
       "codex-app"
     ];
 
@@ -26,8 +25,5 @@
       "zstd"
     ];
 
-    masApps = {
-      "tailscale" = 1475387142;
-    };
   };
 }
