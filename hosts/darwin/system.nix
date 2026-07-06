@@ -47,6 +47,10 @@ in
     VISUAL = "zed --wait";
   };
 
+  fonts.packages = [
+    pkgs.nerd-fonts.jetbrains-mono
+  ];
+
   nix.settings = {
     experimental-features = "nix-command flakes";
     max-jobs = "auto";
