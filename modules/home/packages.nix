@@ -13,4 +13,5 @@
   devpod
 
   rustup
+  zellij
 ]
