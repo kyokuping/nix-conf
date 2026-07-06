@@ -10,6 +10,7 @@
     ];
 
     casks = [
+      "alacritty"
       "zed"
       "zen-browser"
       "raycast"
@@ -22,6 +23,7 @@
 
     brews = [
       "hashicorp/tap/terraform"
+      "zstd"
     ];
 
     masApps = {
