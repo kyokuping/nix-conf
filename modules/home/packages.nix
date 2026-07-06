@@ -6,4 +6,5 @@
   delta
   chezmoi
   htop
+  rustup
 ]
