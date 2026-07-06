@@ -11,4 +11,6 @@
   direnv
   nix-direnv
   devpod
+
+  rustup
 ]
