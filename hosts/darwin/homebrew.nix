@@ -8,6 +8,7 @@
     taps = [ ];
 
     casks = [
+      "alacritty"
       "zed"
       "zen-browser"
       "raycast"
@@ -18,7 +19,9 @@
       "codex-app"
     ];
 
-    brews = [ ];
+    brews = [
+      "zstd"
+    ];
 
     masApps = {
       "tailscale" = 1475387142;
