@@ -6,6 +6,7 @@
   delta
   chezmoi
   htop
+  k9s
   rustup
   zellij
 ]
