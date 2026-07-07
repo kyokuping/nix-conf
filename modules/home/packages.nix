@@ -8,6 +8,7 @@
   chezmoi
   mise
   htop
+  k9s
   direnv
   nix-direnv
   devpod
