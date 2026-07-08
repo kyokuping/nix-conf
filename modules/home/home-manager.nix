@@ -15,7 +15,7 @@
       home.stateVersion = "23.11";
       home.username = username;
       home.homeDirectory = lib.mkForce "/Users/${username}";
-      home.packages = import ./packages.nix { inherit pkgs; };
+      home.packages = import ./packages.nix { inherit pkgs inputs; };
     };
   };
 
