@@ -1,4 +1,4 @@
-{ pkgs }: with pkgs; [
+{ pkgs, inputs }: with pkgs; [
   vim
   git
   gh
@@ -15,4 +15,5 @@
 
   rustup
   zellij
+  inputs.herdr.packages.${pkgs.system}.default
 ]
