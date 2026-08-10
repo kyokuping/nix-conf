@@ -17,6 +17,8 @@
       "cmux"
       "discord"
       "orbstack"
+      "claude-code"
+      "codex"
       "codex-app"
     ];
 
