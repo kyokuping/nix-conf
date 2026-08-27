@@ -25,6 +25,8 @@
       settings = {
         experimental = true;
       };
+      tools.node = "24";
+      tools."npm:@earendil-works/pi-coding-agent" = "latest";
     };
   };
 }
