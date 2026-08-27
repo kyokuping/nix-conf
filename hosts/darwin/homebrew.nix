@@ -12,18 +12,22 @@
     casks = [
       "alacritty"
       "zed"
-      "zen-browser"
+      "zen"
       "raycast"
-      "cmux"
       "discord"
       "orbstack"
+      "dbeaver-community"
+      "yaak"
       "claude-code"
       "codex"
       "codex-app"
     ];
 
     brews = [
-      "hashicorp/tap/terraform"
+      {
+        name = "hashicorp/tap/terraform";
+        trusted = true;
+      }
       "zstd"
     ];
 
