@@ -9,6 +9,7 @@
   mise
   htop
   k9s
+  fluxcd
   direnv
   nix-direnv
   devpod
