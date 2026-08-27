@@ -5,7 +5,9 @@
     onActivation.autoUpdate = true;
     onActivation.upgrade = true;
 
-    taps = [ ];
+    taps = [
+      "can1357/tap"
+    ];
 
     casks = [
       "alacritty"
@@ -22,6 +24,7 @@
     ];
 
     brews = [
+      "can1357/tap/omp"
       "zstd"
     ];
 

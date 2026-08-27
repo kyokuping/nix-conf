@@ -25,6 +25,7 @@
       settings = {
         experimental = true;
       };
+      tools.node = "24";
     };
   };
 }
