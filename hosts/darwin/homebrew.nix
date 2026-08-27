@@ -6,6 +6,7 @@
     onActivation.upgrade = true;
 
     taps = [
+      "can1357/tap"
       "hashicorp/tap"
     ];
 
@@ -28,6 +29,7 @@
         name = "hashicorp/tap/terraform";
         trusted = true;
       }
+      "can1357/tap/omp"
       "zstd"
     ];
 
