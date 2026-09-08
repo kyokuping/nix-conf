@@ -47,6 +47,12 @@ in
     VISUAL = "zed --wait";
   };
 
+  environment.systemPackages = [
+    (pkgs.writeShellScriptBin "zed" ''
+      exec /Applications/Zed.app/Contents/MacOS/cli "$@"
+    '')
+  ];
+
   fonts.packages = [
     pkgs.nerd-fonts.jetbrains-mono
   ];
