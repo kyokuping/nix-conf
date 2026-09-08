@@ -1,6 +1,7 @@
 { pkgs, inputs }: with pkgs; [
   vim
   git
+  glab
   nil
   nixpkgs-fmt
   delta
