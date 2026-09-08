@@ -2,7 +2,6 @@
 
   programs.home-manager.enable = true;
   imports = [
-    ./features/gh.nix
     ./features/git.nix
     ./features/starship.nix
     ./features/zsh.nix

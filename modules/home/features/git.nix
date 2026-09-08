@@ -38,4 +38,13 @@
   };
 
   home.packages = [ pkgs.git-lfs ];
+
+  programs.gh = {
+    enable = true;
+    settings = {
+      git_protocol = "ssh";
+      editor = "vim";
+      prompt = "enabled";
+    };
+  };
 }
