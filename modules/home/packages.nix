@@ -2,6 +2,7 @@
   vim
   git
   gh
+  glab
   nil
   nixpkgs-fmt
   delta
