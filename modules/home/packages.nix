@@ -1,6 +1,7 @@
 { pkgs, inputs }: with pkgs; [
-  vim
   git
+  neovim
+  lazygit
   gh
   glab
   nil
