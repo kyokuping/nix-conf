@@ -1,4 +1,4 @@
-{ ... }: {
+{ pkgs, ... }: {
 
   programs.home-manager.enable = true;
   imports = [
@@ -6,6 +6,13 @@
     ./features/starship.nix
     ./features/zsh.nix
   ];
+  home.sessionVariables = {
+    EDITOR = "nvim";
+    VISUAL = "nvim";
+  };
+  # neovim + lazygit come from packages.nix; their config is managed by chezmoi
+  # (~/.local/share/chezmoi -> ~/.config/nvim, ~/.config/lazygit).
+
   programs.direnv = {
     enable = true;
     nix-direnv.enable = true;
