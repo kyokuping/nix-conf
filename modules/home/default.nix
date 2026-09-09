@@ -1,4 +1,4 @@
-{ ... }: {
+{ pkgs, ... }: {
 
   programs.home-manager.enable = true;
   imports = [
@@ -6,6 +6,10 @@
     ./features/starship.nix
     ./features/zsh.nix
   ];
+  home.sessionVariables = {
+    EDITOR = "nvim";
+    VISUAL = "nvim";
+  };
   programs.direnv = {
     enable = true;
     nix-direnv.enable = true;

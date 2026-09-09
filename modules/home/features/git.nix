@@ -29,7 +29,7 @@
         ui = true;
       };
       core = {
-        editor = "vim";
+        editor = "nvim";
       };
       alias = {
         git = "!exec git";
@@ -43,7 +43,7 @@
     enable = true;
     settings = {
       git_protocol = "ssh";
-      editor = "vim";
+      editor = "nvim";
       prompt = "enabled";
     };
   };

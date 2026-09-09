@@ -9,7 +9,9 @@
       wl-copy = if pkgs.stdenv.isDarwin then "pbcopy" else "wl-copy";
       pbcopy = if pkgs.stdenv.isDarwin then "wl-copy" else "pbcopy";
 
-      v = "vim";
+      v = "nvim";
+      vim = "nvim";
+      vi = "nvim";
     };
   };
 
