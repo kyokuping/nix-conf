@@ -10,6 +10,7 @@
     EDITOR = "nvim";
     VISUAL = "nvim";
   };
+  home.sessionPath = [ "$HOME/Library/pnpm/bin" ];
   # neovim + lazygit come from packages.nix; their config is managed by chezmoi
   # (~/.local/share/chezmoi -> ~/.config/nvim, ~/.config/lazygit).
 
@@ -30,8 +31,16 @@
     globalConfig = {
       settings = {
         experimental = true;
+        npm.package_manager = "npm";
       };
-      tools.node = "24";
+      tools.node = {
+        version = "24";
+        postinstall = "npm install -g @openai/codex";
+      };
+      tools."npm:@anthropic-ai/claude-code" = {
+        version = "latest";
+        npm_args = "--include=optional --ignore-scripts=false";
+      };
       tools."npm:@earendil-works/pi-coding-agent" = "latest";
     };
   };
