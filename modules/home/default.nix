@@ -10,6 +10,7 @@
     EDITOR = "nvim";
     VISUAL = "nvim";
   };
+  home.sessionPath = [ "$HOME/Library/pnpm/bin" ];
   programs.direnv = {
     enable = true;
     nix-direnv.enable = true;
@@ -27,8 +28,16 @@
     globalConfig = {
       settings = {
         experimental = true;
+        npm.package_manager = "npm";
       };
-      tools.node = "24";
+      tools.node = {
+        version = "24";
+        postinstall = "npm install -g @openai/codex";
+      };
+      tools."npm:@anthropic-ai/claude-code" = {
+        version = "latest";
+        npm_args = "--include=optional --ignore-scripts=false";
+      };
       tools."npm:@earendil-works/pi-coding-agent" = "latest";
     };
   };
