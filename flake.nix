@@ -7,6 +7,8 @@
     home-manager.url = "github:nix-community/home-manager";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
     herdr.url = "github:ogulcancelik/herdr/v0.7.1";
+    agenix.url = "github:ryantm/agenix";
+    agenix.inputs.nixpkgs.follows = "nixpkgs";
 
     # darwin
     nix-darwin.url = "github:nix-darwin/nix-darwin/master";
@@ -14,7 +16,7 @@
 
   };
 
-  outputs = inputs@{ self, flake-parts, nix-darwin, home-manager, nixpkgs, ... }:
+  outputs = inputs@{ self, agenix, flake-parts, nix-darwin, home-manager, nixpkgs, ... }:
     flake-parts.lib.mkFlake { inherit inputs; } {
       systems = [ "x86_64-linux" "aarch64-linux" "aarch64-darwin" ];
 
@@ -44,6 +46,7 @@
               inherit (cfg) system;
               specialArgs = mkArgs name cfg;
               modules = cfg.modules ++ [
+                agenix.darwinModules.default
                 home-manager.darwinModules.home-manager
                 {
                   home-manager.extraSpecialArgs = mkArgs name cfg;
