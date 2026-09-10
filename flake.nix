@@ -6,7 +6,7 @@
     flake-parts.url = "github:hercules-ci/flake-parts";
     home-manager.url = "github:nix-community/home-manager";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
-    herdr.url = "github:ogulcancelik/herdr/v0.7.1";
+    herdr.url = "github:ogulcancelik/herdr/v0.9.0";
     agenix.url = "github:ryantm/agenix";
     agenix.inputs.nixpkgs.follows = "nixpkgs";
 
