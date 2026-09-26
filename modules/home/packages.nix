@@ -9,6 +9,7 @@
   chezmoi
   htop
   k9s
+  kubectl
   rustup
   zellij
   inputs.herdr.packages.${pkgs.system}.default
