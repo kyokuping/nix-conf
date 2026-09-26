@@ -11,6 +11,7 @@
   mise
   htop
   k9s
+  kubectl
   fluxcd
   direnv
   nix-direnv
