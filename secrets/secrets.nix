@@ -4,4 +4,5 @@ in
 {
   "openrouter-api-token.age".publicKeys = [ kyoku ];
   "r2-credentials.age".publicKeys = [ kyoku ];
+  "cloudflare-api-token.age".publicKeys = [ kyoku ];
 }
