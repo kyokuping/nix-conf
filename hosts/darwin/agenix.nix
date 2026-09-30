@@ -10,4 +10,8 @@
     file = ../../secrets/r2-credentials.age;
     owner = "kyoku";
   };
+  age.secrets.cloudflare-api-token = {
+    file = ../../secrets/cloudflare-api-token.age;
+    owner = "kyoku";
+  };
 }
