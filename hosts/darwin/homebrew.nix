@@ -16,6 +16,7 @@
       "zen"
       "raycast"
       "discord"
+      "bitwarden"
       "orbstack"
       "dbeaver-community"
       "yaak"
