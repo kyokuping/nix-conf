@@ -39,6 +39,7 @@
         version = "latest";
         npm_args = "--include=optional --ignore-scripts=false";
       };
+      tools."npm:skills" = "latest";
     };
   };
 }
