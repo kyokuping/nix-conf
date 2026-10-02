@@ -1,6 +1,4 @@
-{ pkgs, inputs, username, platform, hostname, lib, ... }: {
-  imports = [ inputs.home-manager.darwinModules.home-manager ];
-
+{ pkgs, inputs, username, platform, hostname, ... }: {
   programs.zsh.enable = true;
 
   home-manager = {
@@ -13,8 +11,6 @@
       imports = [ ./default.nix ];
 
       home.stateVersion = "23.11";
-      home.username = username;
-      home.homeDirectory = lib.mkForce "/Users/${username}";
       home.packages = import ./packages.nix { inherit pkgs inputs; };
     };
   };

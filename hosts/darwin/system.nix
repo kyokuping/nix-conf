@@ -1,7 +1,7 @@
-{ self, pkgs, ... }:
+{ self, pkgs, username, ... }:
 
 let
-  cleanup-target = "/Users/kyoku/contributions";
+  cleanup-target = "/Users/${username}/contributions";
 
   cleanup-script = pkgs.writeShellApplication {
     name = "cleanup";
@@ -24,7 +24,8 @@ in
 
   system.configurationRevision = self.rev or self.dirtyRev or null;
   system.stateVersion = 6;
-  system.primaryUser = "kyoku";
+  system.primaryUser = username;
+  users.users.${username}.home = "/Users/${username}";
   nixpkgs.hostPlatform = "aarch64-darwin";
 
   system.defaults = {
