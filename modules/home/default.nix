@@ -40,6 +40,7 @@
         npm_args = "--include=optional --ignore-scripts=false";
       };
       tools."npm:@earendil-works/pi-coding-agent" = "latest";
+      tools."npm:skills" = "latest";
     };
   };
 }
