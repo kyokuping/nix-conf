@@ -23,6 +23,7 @@
       "claude-code"
       "codex"
       "codex-app"
+      "t3-code"
     ];
 
     brews = [
