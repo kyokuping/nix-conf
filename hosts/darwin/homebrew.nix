@@ -24,6 +24,7 @@
       "claude-code"
       "codex"
       "codex-app"
+      "paseo"
     ];
 
     brews = [
