@@ -1,4 +1,4 @@
-{ pkgs, ... }: {
+{ ... }: {
 
   programs.home-manager.enable = true;
   imports = [
@@ -10,6 +10,7 @@
   home.sessionVariables = {
     EDITOR = "nvim";
     VISUAL = "nvim";
+    OPENROUTER_API_KEY = "$(cat /run/agenix/openrouter-api-token)";
   };
   home.sessionPath = [ "$HOME/Library/pnpm/bin" ];
   programs.direnv = {

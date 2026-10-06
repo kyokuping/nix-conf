@@ -8,6 +8,7 @@
 
     taps = [
       "can1357/tap"
+      "anomalyco/tap"
     ];
 
     casks = [
@@ -29,6 +30,7 @@
     brews = [
       "can1357/tap/omp"
       "zstd"
+      "anomalyco/tap/opencode-v2"
     ];
 
   };
