@@ -36,10 +36,6 @@
         version = "24";
         postinstall = "npm install -g @openai/codex";
       };
-      tools."npm:@anthropic-ai/claude-code" = {
-        version = "latest";
-        npm_args = "--include=optional --ignore-scripts=false";
-      };
       tools."npm:skills" = "latest";
     };
   };
