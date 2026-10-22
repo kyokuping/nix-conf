@@ -14,4 +14,8 @@
     file = ../../secrets/cloudflare-api-token.age;
     owner = "kyoku";
   };
+  age.secrets.opencode-server-password = {
+    file = ../../secrets/opencode-server-password.age;
+    owner = "kyoku";
+  };
 }

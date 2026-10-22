@@ -11,6 +11,16 @@ let
       ${builtins.readFile (self + "/assets/cleanup.sh")}
     '';
   };
+
+  opencode-serve = pkgs.writeShellApplication {
+    name = "opencode-serve";
+    runtimeInputs = [ pkgs.coreutils ];
+    text = ''
+      OPENCODE_SERVER_PASSWORD="$(cat /run/agenix/opencode-server-password)"
+      export OPENCODE_SERVER_PASSWORD
+      exec /opt/homebrew/bin/opencode serve --hostname 127.0.0.1 --port 4096
+    '';
+  };
 in
 {
   launchd.user.agents.repo-cleanup = {
@@ -19,6 +29,17 @@ in
       StartCalendarInterval = [{ Hour = 3; Minute = 0; }];
       StandardOutPath = "/tmp/repo-cleanup.log";
       StandardErrorPath = "/tmp/repo-cleanup.err";
+    };
+  };
+
+  # Shared OpenCode server for T3 Code, listening on 127.0.0.1:4096.
+  launchd.user.agents.opencode-serve = {
+    serviceConfig = {
+      ProgramArguments = [ "${opencode-serve}/bin/opencode-serve" ];
+      RunAtLoad = true;
+      KeepAlive = true;
+      StandardOutPath = "/tmp/opencode-serve.log";
+      StandardErrorPath = "/tmp/opencode-serve.err";
     };
   };
 
