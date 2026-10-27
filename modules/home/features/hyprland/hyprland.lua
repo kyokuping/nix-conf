@@ -27,7 +27,7 @@ hl.on("hyprland.start", function()
 end)
 
 hl.bind("SUPER + Return", hl.dsp.exec_cmd("kitty"))
-hl.bind("SUPER + R", hl.dsp.exec_cmd("wofi --show drun"))
+hl.bind("SUPER + R", hl.dsp.exec_cmd("hyprlauncher --toggle"))
 hl.bind("SUPER + B", hl.dsp.exec_cmd("firefox"))
 hl.bind("SUPER + C", hl.dsp.window.close())
 hl.bind("SUPER + V", hl.dsp.window.float({ action = "toggle" }))
