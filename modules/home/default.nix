@@ -1,4 +1,4 @@
-{ ... }: {
+{ lib, pkgs, ... }: {
 
   programs.home-manager.enable = true;
   imports = [
@@ -10,9 +10,12 @@
   home.sessionVariables = {
     EDITOR = "nvim";
     VISUAL = "nvim";
+  } // lib.optionalAttrs pkgs.stdenv.isDarwin {
     OPENROUTER_API_KEY = "$(cat /run/agenix/openrouter-api-token)";
   };
-  home.sessionPath = [ "$HOME/Library/pnpm/bin" ];
+  home.sessionPath = [
+    (if pkgs.stdenv.isDarwin then "$HOME/Library/pnpm/bin" else "$HOME/.local/share/pnpm")
+  ];
   programs.direnv = {
     enable = true;
     nix-direnv.enable = true;

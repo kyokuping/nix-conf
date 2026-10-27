@@ -1,0 +1,12 @@
+{
+  "layer": "top",
+  "position": "top",
+  "modules-left": ["hyprland/workspaces"],
+  "modules-center": ["clock"],
+  "modules-right": ["pulseaudio", "network", "battery", "tray"],
+  "clock": {"format": "{:%m-%d %H:%M}"},
+  "network": {"format-wifi": "Wi-Fi {essid}", "format-ethernet": "LAN", "format-disconnected": "Offline"},
+  "pulseaudio": {"format": "Volume {volume}%", "format-muted": "Muted"},
+  "battery": {"format": "Battery {capacity}%"},
+  "tray": {"spacing": 8}
+}

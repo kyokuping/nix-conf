@@ -14,6 +14,6 @@
 
   services.gpg-agent = {
     enable = true;
-    pinentry.package = pkgs.pinentry_mac;
+    pinentry.package = if pkgs.stdenv.isDarwin then pkgs.pinentry_mac else pkgs.pinentry-qt;
   };
 }

@@ -6,13 +6,16 @@
     syntaxHighlighting.enable = true;
 
     shellAliases = {
-      wl-copy = if pkgs.stdenv.isDarwin then "pbcopy" else "wl-copy";
-      pbcopy = if pkgs.stdenv.isDarwin then "wl-copy" else "pbcopy";
-
       v = "nvim";
       vim = "nvim";
       vi = "nvim";
-    };
+    } // (if pkgs.stdenv.isDarwin then {
+      wl-copy = "pbcopy";
+      wl-paste = "pbpaste";
+    } else {
+      pbcopy = "wl-copy";
+      pbpaste = "wl-paste";
+    });
   };
 
 }
