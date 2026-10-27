@@ -23,6 +23,12 @@
       flake =
         let
           hosts = {
+            nixos = {
+              platform = "linux";
+              system = "x86_64-linux";
+              username = "kyoku";
+              modules = [ ./hosts/nixos ];
+            };
             "kyoku-MacBookAir" = {
               platform = "darwin";
               system = "aarch64-darwin";
@@ -40,6 +46,17 @@
 
         in
         {
+          nixosConfigurations = nixpkgs.lib.mapAttrs
+            (name: cfg: nixpkgs.lib.nixosSystem {
+              inherit (cfg) system;
+              specialArgs = mkArgs name cfg;
+              modules = cfg.modules ++ [
+                home-manager.nixosModules.home-manager
+                ./modules/home/home-manager.nix
+              ];
+            })
+            (nixpkgs.lib.filterAttrs (_: c: c.platform == "linux") hosts);
+
           # darwin
           darwinConfigurations = nixpkgs.lib.mapAttrs
             (name: cfg: nix-darwin.lib.darwinSystem {
