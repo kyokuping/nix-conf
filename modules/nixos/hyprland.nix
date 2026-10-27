@@ -15,7 +15,7 @@
   systemd.packages = [ pkgs.hyprpolkitagent ];
   xdg.portal.extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
   environment.systemPackages = with pkgs; [
-    kitty wofi waybar mako networkmanagerapplet
+    kitty waybar mako networkmanagerapplet
     hyprpolkitagent brightnessctl playerctl
   ];
 }
