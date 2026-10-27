@@ -20,7 +20,7 @@
   users.users.${username} = {
     isNormalUser = true;
     description = "kyoku-nixOS";
-    extraGroups = [ "networkmanager" "wheel" ];
+    extraGroups = [ "networkmanager" "wheel" "docker" ];
     shell = pkgs.zsh;
     packages = [ pkgs.kdePackages.kate ];
   };
@@ -28,6 +28,8 @@
   programs.firefox.enable = true;
   services.printing.enable = true;
   services.pcscd.enable = true;
+
+  virtualisation.docker.enable = true;
 
   services.pulseaudio.enable = false;
   security.rtkit.enable = true;
@@ -43,7 +45,7 @@
     experimental-features = [ "nix-command" "flakes" ];
     auto-optimise-store = true;
   };
-  environment.systemPackages = with pkgs; [ vim wget git ];
+  environment.systemPackages = with pkgs; [ vim wget git docker-compose ];
   fonts.packages = with pkgs; [ noto-fonts-cjk-sans nerd-fonts.jetbrains-mono ];
 
   home-manager.users.${username} = import ./home.nix;
