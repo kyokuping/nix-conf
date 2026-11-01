@@ -21,8 +21,6 @@
       "orbstack"
       "dbeaver-community"
       "yaak"
-      "codex"
-      "codex-app"
       "t3-code"
     ];
 
